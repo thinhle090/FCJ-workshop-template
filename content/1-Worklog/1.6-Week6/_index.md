@@ -5,53 +5,39 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Run corporate Microsoft Windows environments and centralized identity services on the cloud.
+* Architect resilient, fault-tolerant infrastructure completely free of single points of failure.
+* Synthesize all learned AWS services into a production-ready portfolio project.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Windows and Active Directory environments: <br>&emsp; + Deploy Windows Server Workloads on the AWS platform. <br>&emsp; + Centralize user management and decentralization with AWS Managed Microsoft AD.                                                                                       | 25/05/2026   | 25/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Windows and Active Directory environments: <br>&emsp; + Deploy Windows Server Workloads on the AWS platform. <br>&emsp; + Centralize user management and decentralization with AWS Managed Microsoft AD.               | 26/05/2026   | 26/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - High Availability System Design: <br>&emsp; + Implement a Multi-AZ architecture to ensure uninterrupted system operation. <br>&emsp; + Configure an Application Load Balancer to optimize security and performance.              | 27/05/2026   | 27/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 5   | - AWS Mini Project (Self-built): <br>&emsp; + Design your own system architecture diagram. <br>&emsp; + Implement the entire infrastructure from Network, Compute to Database. <br>&emsp; + Perform load testing and complete the final report.            | 28/05/2026   | 28/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 6   | - AWS Mini Project (Self-built): <br>&emsp; + Design your own system architecture diagram. <br>&emsp; + Implement the entire infrastructure from Network, Compute to Database. <br>&emsp; + Perform load testing and complete the final report.                 | 29/05/2026   | 29/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
 
 
 ### Week 6 Achievements:
+* Windows Workloads and Storage Integration:
+  * Allocate and optimize Windows Server instances while managing the availability of enterprise licensees (BYOL).
+  * Integrate shared file storage systems for the enterprise using Amazon FSx for Windows File Server.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Manage Identity and Access with AWS Managed Microsoft AD:
+  * Configure an Active Directory domain controller on AWS to centrally manage users, groups, and computing assets within the enterprise.
+  * Implement seamless domain joins for EC2 instances and apply security standards through Group Policy Objects (GPOs).
 
-* Successfully created and configured an AWS Free Tier account.
+* Design High-Availability Architectures:
+  * Build resilient, fault-tolerant network systems distributed across multiple isolated Availability Zones (Multi-AZs).
+  * Combine application load balancing with auto-scaling and a multi-AZ database to completely eliminate single points of failure (SPOF).
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Complete the final mini-project (AWS Capstone Mini Project):
+  * Outline a detailed production architecture diagram outlining the boundaries of Network, Computing, Database, and Security.
+  * Build and deploy a complete multi-tier infrastructure from scratch based on the complex assumed business requirements.
+  * Perform rigorous load testing, optimize cost-allocation tags, and complete a comprehensive performance report for developing a resume.

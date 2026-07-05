@@ -5,111 +5,196 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# Job Tracker Platform using AWS Serverless Architecture
+## Job Application Tracking Platform on AWS Serverless Architecture
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+
+The Job Tracker Platform is a centralized platform that helps students and job seekers optimize the job application process, replacing manual tracking with Excel. The system supports CV management, application status tracking, and automatically sends follow-up reminder emails to employers.
+
+The platform is deployed on an AWS Serverless architecture (React, Amazon S3, CloudFront, Amazon Cognito, API Gateway, AWS Lambda, and Amazon DynamoDB), enabling automatic scalability while optimizing operational costs. It also integrates Amazon EventBridge, Amazon SES, AWS WAF, and Amazon CloudWatch to automate email notifications, enhance security, and provide a solid foundation for future data analytics and AI-driven features.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+*Current Problem*
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+Currently, many students and job seekers still manage their job application process manually using tools such as Microsoft Excel, Google Sheets, or note-taking applications. Storing information across multiple platforms makes it difficult to track the status of each application and increases the risk of missing important milestones, such as interview schedules, response deadlines, or follow-up dates with employers.
+
+In addition, application documents such as CVs, cover letters, and related files are often stored in different locations on personal computers or cloud storage services. This makes searching and managing documents time-consuming. Users also lack a tool to track the number of submitted applications, evaluate the effectiveness of their job search, or monitor application progress across different stages.
+
+Furthermore, many existing job application management systems only provide basic features or require paid subscriptions to access advanced functionality. This limits accessibility for students and new job seekers who need a comprehensive yet cost-effective solution. Therefore, there is a need for a centralized, secure, and user-friendly platform that manages the entire job application process while leveraging AWS Serverless services to reduce operational costs, improve scalability, and automate tasks such as reminder emails and application management.
+
+*Solution*
+
+The proposed solution uses Amazon Cognito for user authentication and identity management, ensuring that only authenticated users can access the system. The web interface is developed with React and hosted on Amazon S3, while Amazon CloudFront and Amazon Route 53 provide fast content delivery and domain management. Business logic is handled through Amazon API Gateway and AWS Lambda, eliminating the need to manage servers while reducing operational costs.
+
+Application data is stored in Amazon DynamoDB, while CVs and supporting documents are securely stored in Amazon S3 using a Private Bucket. Amazon EventBridge automatically checks applications that require follow-up actions and triggers AWS Lambda to send reminder emails through Amazon SES, helping users avoid missing important milestones throughout the recruitment process.
+
+In addition, the solution integrates AWS WAF to protect the application from malicious requests, Amazon CloudWatch to monitor system performance and operations, and AWS CloudTrail to record activity logs within the AWS environment. With its Serverless architecture, the platform can scale flexibly based on user demand, optimize operational costs, and provide a foundation for future enhancements such as application analytics, data analysis, and AI integration.
+
+*Benefits and Return on Investment (ROI)*
+
+Deploying the Job Tracker Platform on AWS Serverless architecture reduces infrastructure and operational costs through the pay-as-you-go pricing model while eliminating the need for server management. The platform enables users to manage their job applications in a centralized system, reducing the time required to track applications and minimizing the risk of missing important milestones through automated reminder notifications. In addition, the Serverless architecture provides flexible scalability and establishes a strong foundation for future feature expansion, ensuring long-term value and maximizing return on investment.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+*Architecture Objectives*  
+The architecture of the Job Tracker Platform is designed based on the AWS Serverless model to build a system that is scalable, secure, cost-efficient, and does not require server management. The system separates the user interface, business logic layer, and data storage layer, making it easier to maintain, upgrade, and extend with new features in the future.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+*Architecture Overview*  
+* The system architecture consists of three main layers:
+* **Frontend Layer:** Developed with React and deployed on Amazon S3, integrated with Amazon CloudFront and Amazon Route 53 to deliver content quickly and efficiently to users.
+* **Backend Layer:** Users authenticate through Amazon Cognito. Requests from the frontend are routed to Amazon API Gateway and processed by AWS Lambda functions to execute the application's business logic.
+* **Data Layer:** Application data is stored in Amazon DynamoDB, while CVs and supporting documents are stored in Amazon S3. Amazon EventBridge and Amazon SES are used to automatically send follow-up reminder emails, while Amazon CloudWatch and AWS CloudTrail monitor system performance and record operational activities.
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+![Job Tracker Architecture](/images/sd.png)
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+
+*AWS Services Used*  
+- *Amazon Route 53*: Manages the domain name and routes users to the system.
+- *AWS WAF*: Protects the application against malicious requests and common web attacks.
+- *Amazon CloudFront*: Delivers content with low latency and high transfer speeds.
+- *Amazon S3*: Stores the React frontend and users' CV files.
+- *Amazon Cognito*: Authenticates users and manages access control.
+- *Amazon API Gateway*: Receives and routes API requests to AWS Lambda.
+- *AWS Lambda*: Processes the application's business logic and backend functions.
+- *Amazon DynamoDB*: Stores user information and job application data.
+- *Amazon EventBridge*: Triggers scheduled and automated tasks.
+- *Amazon SES*: Sends follow-up reminder emails and notifications to users.
+- *Amazon CloudWatch*: Monitors system performance and collects application logs.
+- *AWS CloudTrail*: Records AWS activity history and supports security auditing.
+
+*Component Design*  
+- *Edge Layer*: Uses Amazon Route 53, AWS WAF, and Amazon CloudFront to route user requests, protect the system from malicious traffic, and accelerate content delivery.
+- *Presentation Layer*: The user interface is developed with React and deployed on Amazon S3, allowing users to manage job applications, CVs, and application status through a web browser.
+- *User Management*: Amazon Cognito handles user registration, sign-in, and authentication using JWT tokens to control access to the system.
+- *Application Layer*: Amazon API Gateway receives user requests and forwards them to AWS Lambda, which processes business functions such as job application management, CV management, and generating pre-signed URLs.
+- *Data Layer*: Job application data is stored in Amazon DynamoDB, while CVs and supporting documents are securely stored in Amazon S3.
+- *Monitoring and Operations*: Amazon EventBridge, Amazon SES, Amazon CloudWatch, and AWS CloudTrail automate reminder emails, monitor system performance, and record operational logs.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+*Implementation Phases*
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+* Infrastructure Deployment  
+The system is deployed on an AWS Serverless architecture, using Amazon Route 53 for domain management, AWS WAF for application protection, Amazon CloudFront for content delivery, and Amazon S3 for hosting the web interface. This architecture provides flexible scalability while reducing operational costs.
 
-### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+* Application Deployment  
+The user interface is developed with React and connected to Amazon API Gateway, which forwards requests to AWS Lambda functions. Users authenticate through Amazon Cognito and use JWT tokens to access the system's features.
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+* Data Deployment  
+User information and job application data are stored in Amazon DynamoDB, while CVs are stored in Amazon S3 using a Private Bucket. Separating structured data from file storage improves security, simplifies management, and enhances system performance.
 
-Total: $0.7/month, $8.40/12 months
+* Monitoring and Security  
+The system uses Amazon EventBridge to trigger scheduled tasks, Amazon SES to send reminder emails, Amazon CloudWatch to monitor system performance, and AWS CloudTrail to record operational activities. In addition, AWS WAF protects the application against unauthorized access and common web attacks.
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+* Technology Stack Summary
+
+| Component | Technology |
+|-----------|------------|
+| Frontend | React, HTML, CSS, JavaScript |
+| Hosting | Amazon S3, Amazon CloudFront |
+| Domain | Amazon Route 53 |
+| Authentication | Amazon Cognito |
+| API | Amazon API Gateway |
+| Business Logic | AWS Lambda |
+| Database | Amazon DynamoDB |
+| File Storage | Amazon S3 |
+| Notification | Amazon SES |
+| Scheduler | Amazon EventBridge |
+| Monitoring | Amazon CloudWatch, AWS CloudTrail |
+| Security | AWS WAF |
+
+---
+
+* Deployment Process
+
+1. Develop the user interface using React.
+2. Deploy the frontend to Amazon S3 and distribute content through Amazon CloudFront.
+3. Configure the domain using Amazon Route 53.
+4. Set up user authentication with Amazon Cognito.
+5. Build REST APIs using Amazon API Gateway.
+6. Develop AWS Lambda functions to implement the application's business logic.
+7. Store application data in Amazon DynamoDB and CV files in Amazon S3.
+8. Configure Amazon EventBridge and Amazon SES to send automated reminder emails.
+9. Configure Amazon CloudWatch, AWS CloudTrail, and AWS WAF for system monitoring and security.
+
+*Technical Requirements*
+
+| Category | Technical Requirements |
+|:----------|:-----------------------|
+| **Platform** | Amazon Web Services (AWS) |
+| **Frontend** | React, HTML, CSS, JavaScript |
+| **Backend** | AWS Lambda, Amazon API Gateway |
+| **Database** | Amazon DynamoDB |
+| **Storage** | Amazon S3 (Private Bucket) |
+| **User Authentication** | Amazon Cognito (JWT) |
+| **Networking & Content Delivery** | Amazon Route 53, Amazon CloudFront |
+| **Security** | AWS WAF |
+| **Automation** | Amazon EventBridge, Amazon SES |
+| **System Monitoring** | Amazon CloudWatch, AWS CloudTrail |
+| **Development Tools** | Visual Studio Code, Git, GitHub, Node.js |
+
+---
+### 5. Implementation Roadmap & Milestones
+
+- *Pre-Internship (Month 0)*: Spend one month gathering requirements, planning the project, and designing the solution architecture.
+- *Internship Period (Months 1–3)*:
+    - **Month 1**: Learn AWS services and develop the frontend application.
+    - **Month 2**: Implement backend services and integrate AWS components.
+    - **Month 3**: Deploy, test, optimize, and release the system.
+- *Post-Deployment*: Continue monitoring, optimizing, and extending the platform with new features over the next year.
+
+### 6. Cost Estimation
+The costs can be viewed above. [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
+Or download [budget estimate file](../attachments/budget_estimation.pdf).  
+
+*Infrastructure Cost*
+
+| AWS Service | Purpose | Estimated Cost (USD/Month) |
+|:------------|:--------|---------------------------:|
+| Amazon Route 53 | Domain management | $0.50 |
+| Domain (.com) | Website access | $1.20 |
+| Amazon CloudFront | Content delivery | $1.50 |
+| Amazon S3 | Website and CV storage | $1.00 |
+| Amazon Cognito | User authentication | $0.00 |
+| Amazon API Gateway | API management | $1.00 |
+| AWS Lambda | Business logic processing | $0.50 |
+| Amazon DynamoDB | Data storage | $1.50 |
+| Amazon EventBridge | Task automation | $0.00 |
+| Amazon SES | Follow-up reminder emails | $0.50 |
+| AWS WAF | Application protection | $8.00 |
+| Amazon CloudWatch | System monitoring | $2.00 |
+| AWS CloudTrail | Activity logging | $0.00 |
+
+*Total*: **17.70 USD/month**, **212.40 USD/year**
+
+- *Note*: This is an estimated cost for a demonstration environment or educational project. If the number of users or traffic increases, the costs of services such as Amazon CloudFront, AWS Lambda, Amazon API Gateway, Amazon DynamoDB, and Amazon S3 will increase based on actual usage. AWS follows a **Pay-as-you-go** pricing model, meaning users only pay for the resources they consume.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+*Security Risks*  
+The system may be exposed to unauthorized access or security vulnerabilities if authentication mechanisms are not properly configured. This could result in unauthorized access to user data or CV files. To mitigate these risks, the platform uses Amazon Cognito for user authentication, JWT tokens for access control, and AWS WAF to protect against common web attacks.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+*Performance Risks*  
+When the number of users or requests increases significantly, the system may experience longer response times or processing errors. This can negatively impact the user experience. The AWS Serverless architecture enables services such as AWS Lambda and Amazon DynamoDB to automatically scale according to workload demands.
+
+*Data Storage Risks*  
+Job application data and CV files are valuable assets that require secure storage. Configuration errors or incorrect access permissions may lead to data loss or unauthorized access. The platform stores files in Amazon S3 Private Buckets and application data in Amazon DynamoDB while leveraging AWS access control mechanisms to ensure data security and integrity.
+
+*Cost Risks*  
+Since AWS uses a pay-as-you-go pricing model, operational costs may increase as the number of users and requests grows. Without proper monitoring, expenses may exceed the planned budget. To address this risk, AWS Billing and Amazon CloudWatch are used to monitor resource usage and optimize infrastructure costs.
+
+*Operational Risks*  
+Configuration errors, software bugs, or service interruptions may occur during deployment or system updates. These issues can temporarily affect system availability and user experience. To minimize operational risks, the platform is thoroughly tested before deployment, while Amazon CloudWatch and AWS CloudTrail are used for monitoring, logging, and troubleshooting.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+
+*System Completion*: Successfully develop the Job Tracker Platform on an AWS Serverless architecture, providing a centralized solution for managing the job application process. The platform will support job application management, CV storage, application status tracking, and automated reminder emails.
+
+*Enhanced User Experience*: Users will be able to easily track their application progress and manage documents through an intuitive interface. Automated reminders help reduce the risk of missing important recruitment milestones.
+
+*Performance and Security*: The platform will provide flexible scalability through AWS Serverless architecture while ensuring data security with services such as Amazon Cognito, AWS WAF, and Amazon CloudWatch. This enables the system to operate reliably and securely.
+
+*Future Scalability*: The architecture is designed to support future expansion, allowing new features such as application analytics, data analysis, and AI integration to be added without requiring major architectural changes.

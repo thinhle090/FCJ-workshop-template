@@ -1,125 +1,156 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Sự kiện 1 - Prompt Engineering, Sơ đồ tư duy AI & Phương pháp BMAD"
+date: 2026-05-09
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+| Thông tin | Chi tiết |
+|---|---|
+| Ngày | 09/05/2026 |
+| Địa điểm | Tầng 26, Tòa nhà Bitexco Financial Tower, Phường Sài Gòn, TP. Hồ Chí Minh |
+| Vai trò | Người tham dự |
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+Trang này tổng hợp những nội dung nổi bật được chia sẻ trong sự kiện, tập trung vào ba chủ đề chính gồm: **Automated Prompt Engineering**, sơ đồ tư duy về cách tương tác hiệu quả với AI và phương pháp phát triển **BMAD (Build More Architect Dreams)**.
 
-### Mục Đích Của Sự Kiện
+---
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### 1. Giới thiệu
 
-### Danh Sách Diễn Giả
+Nội dung được tổng hợp từ nhiều tài liệu và phần trình bày tại sự kiện, bao gồm:
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Bài thuyết trình **"Automated Prompt Engineering: Enhancing LLM Output Quality"**
+- Sơ đồ tư duy **"Tương tác hiệu quả với AI & Kiến trúc ứng dụng AWS"**
+- Phương pháp phát triển AI **BMAD (Build More Architect Dreams)**
 
-### Nội Dung Nổi Bật
+---
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### 2. Nội dung chi tiết
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### 2.1 Bài thuyết trình: Automated Prompt Engineering
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+**Diễn giả: Nguyễn Tuấn Thịnh**
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+Bài trình bày giới thiệu vai trò của Prompt Engineering trong việc nâng cao chất lượng phản hồi của các mô hình ngôn ngữ lớn (LLM). Đồng thời, diễn giả chia sẻ nhiều nguyên tắc và kỹ thuật giúp xây dựng prompt hiệu quả hơn.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+**Tầm quan trọng của Prompt Engineering:**
 
-#### Domain-Driven Design (DDD)
+- Prompt quá chung chung thường tạo ra kết quả chưa chính xác.
+- Tiêu tốn nhiều token không cần thiết.
+- Hướng dẫn thiếu rõ ràng làm giảm hiệu quả xử lý của AI.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+**Các thành phần của một prompt hiệu quả:**
 
-#### Event-Driven Architecture
+| Thành phần | Mô tả |
+|---|---|
+| Vai trò | Xác định vai trò hoặc nhân vật mà AI sẽ đảm nhận |
+| Hướng dẫn | Mô tả rõ nhiệm vụ AI cần thực hiện |
+| Bối cảnh | Cung cấp thông tin nền liên quan |
+| Dữ liệu đầu vào | Nội dung AI sẽ xử lý |
+| Định dạng đầu ra | Quy định cách trình bày kết quả |
+| Ví dụ | Minh họa đầu vào và đầu ra mong muốn |
+| Ràng buộc | Các giới hạn hoặc quy tắc cần tuân thủ |
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+**Một số nguyên tắc khi viết Prompt:**
 
-#### Compute Evolution
+- Trình bày rõ ràng, cụ thể.
+- Sử dụng câu lệnh trực tiếp.
+- Mô tả chính xác yêu cầu cần thực hiện.
+- Cho phép AI phản hồi "Tôi không biết" khi thiếu dữ liệu.
+- Chia các yêu cầu phức tạp thành nhiều bước nhỏ.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**Kinh tế Token (Token Economy):**
 
-#### Amazon Q Developer
+- Token là đơn vị dữ liệu được mô hình AI sử dụng để xử lý.
+- Chi phí được tính dựa trên số lượng token đầu vào và đầu ra.
+- Tiếng Việt thường sử dụng nhiều token hơn so với tiếng Anh.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+**Các kỹ thuật nâng cao:**
 
-### Những Gì Học Được
+- **Chain-of-Thought (CoT):** Hướng AI suy luận theo từng bước.
+- **Tree-of-Thoughts (ToT):** Xây dựng nhiều hướng suy luận khác nhau.
+- **Self-Consistency:** So sánh nhiều kết quả và lựa chọn đáp án phù hợp nhất.
+- **Retrieval-Augmented Generation (RAG):** Bổ sung dữ liệu từ nguồn bên ngoài.
+- **Role Prompting:** Giao vai trò cụ thể để AI phản hồi đúng ngữ cảnh.
 
-#### Tư Duy Thiết Kế
+**Công cụ Proptimizer:**
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+Đây là tiện ích mở rộng trên trình duyệt giúp tối ưu hóa prompt tự động, được triển khai trên kiến trúc AWS Serverless gồm:
 
-#### Kiến Trúc Kỹ Thuật
+CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+---
 
-#### Chiến Lược Hiện Đại Hóa
+#### 2.2 Sơ đồ tư duy: Tương tác AI hiệu quả & Kiến trúc ứng dụng AWS
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+**Tối ưu cách làm việc với AI:**
 
-### Ứng Dụng Vào Công Việc
+Sơ đồ tư duy giới thiệu mô hình **KFC (Knowledge - Format - Constraints)** nhằm giúp người dùng xây dựng prompt đầy đủ ngữ cảnh, đúng định dạng và có các ràng buộc rõ ràng.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+**Một số phương pháp được khuyến nghị:**
 
-### Trải nghiệm trong event
+- Chia bài toán thành nhiều phần nhỏ.
+- Yêu cầu AI đề xuất nhiều phương án giải quyết.
+- So sánh các câu trả lời để lựa chọn phương án tối ưu.
+- Cung cấp dữ liệu đầu vào có cấu trúc rõ ràng.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+**Các kỹ thuật AI nâng cao:**
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+- Chain-of-Thought (CoT)
+- Tree-of-Thoughts (ToT)
+- Self-Consistency
+- Retrieval-Augmented Generation (RAG)
+- Role Prompting
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+**Kiến trúc AWS Serverless:**
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+---
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+#### 2.3 Phương pháp BMAD (Build More Architect Dreams)
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+BMAD là một framework mã nguồn mở hỗ trợ phát triển các dự án AI theo quy trình chuẩn, giúp nhóm phát triển tổ chức công việc khoa học và hiệu quả hơn.
+
+**Những đặc điểm nổi bật:**
+
+- Quy trình gồm các bước: Phân tích → Lập kế hoạch → Thiết kế kiến trúc → Triển khai.
+- Cung cấp hơn 12 AI Agent phục vụ từng giai đoạn phát triển.
+- Tích hợp phương pháp Agile vào quy trình làm việc.
+- Hỗ trợ trợ lý AI thông qua lệnh **bmad-help**.
+- Chế độ **Party Mode** cho phép nhiều Agent phối hợp cùng lúc.
+
+**Các mô-đun chính:**
+
+| Mô-đun | Mô tả |
+|---|---|
+| BMM | Bộ khung chính với 34 quy trình |
+| BMB | Xây dựng AI Agent tùy chỉnh |
+| TEA | Hỗ trợ kiểm thử và tự động hóa |
+| BMGD | Phát triển trò chơi |
+| CIS | Hỗ trợ đổi mới và Design Thinking |
+
+**Cài đặt nhanh** *(Yêu cầu Node.js 20+, Python 3.10+ và uv)*
+
+```bash
+npx bmad-method install
+```
+
+**Cộng đồng hỗ trợ:**
+
+Discord, YouTube và X (Twitter).
+
+---
+
+### 3. Hình ảnh khi tham gia sự kiện
+
+Dưới đây là một số hình ảnh ghi lại quá trình tham gia sự kiện:
+
+![Hình ảnh tại Event 1](/images/b1.jpg)
+
+---
+
+### 4. Kết luận
+
+Sự kiện mang đến nhiều kiến thức thực tiễn về Prompt Engineering, phương pháp tương tác hiệu quả với AI và quy trình phát triển BMAD. Các nội dung được trình bày rõ ràng, có tính ứng dụng cao trong quá trình phát triển các hệ thống AI cũng như các giải pháp dựa trên nền tảng AWS Serverless. Đây là nguồn tài liệu hữu ích giúp nâng cao kỹ năng làm việc với AI và hỗ trợ triển khai các dự án trong thực tế.

@@ -1,125 +1,261 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Sự kiện 2 - AWS Vietnam Community Day 2026"
+date: 2026-05-23
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+| Thông tin | Chi tiết |
+|---|---|
+| Ngày | 23/05/2026 |
+| Địa điểm | Tầng 26, Tòa nhà Bitexco Financial Tower, Phường Sài Gòn, TP.Hồ Chí Minh |
+| Vai trò | Người tham dự |
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+Trang này tổng hợp nội dung các bài chia sẻ tại **AWS Vietnam Community Day 2026**, bao gồm thiết kế context AI, hạ tầng edge, kinh nghiệm hackathon, độ tin cậy của LLM, và hệ thống multi-agent cấp doanh nghiệp.
 
-### Mục Đích Của Sự Kiện
+---
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Trọng tâm chung
 
-### Danh Sách Diễn Giả
+> AI không chỉ là công cụ demo. AI cần có bối cảnh, kiến trúc và quy trình triển khai rõ ràng.
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- AWS đóng vai trò nền tảng cho hạ tầng, bảo mật, vận hành và mở rộng hệ thống AI
+- Các bài chia sẻ đều nhấn mạnh tính thực tế: từ prompt, hackathon, CloudFront đến enterprise-grade multi-agent
 
-### Nội Dung Nổi Bật
+---
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### 1. Giới thiệu
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+AWS Vietnam Community Day 2026 quy tụ các chuyên gia chia sẻ kinh nghiệm thực tế trong việc xây dựng hệ thống AI và cloud trên AWS. Các chủ đề trải rộng từ năng suất cá nhân với AI, công cụ trợ lý doanh nghiệp, hạ tầng CDN, phát triển sản phẩm trong hackathon, vấn đề độ tin cậy của LLM, đến hệ thống chấm điểm tín dụng multi-agent cấp enterprise.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+---
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### 2. Tóm tắt các bài chia sẻ
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### 2.1 Tinh Truong - Build Second Brain
 
-#### Domain-Driven Design (DDD)
+Bài chia sẻ tập trung vào cách làm việc hiệu quả với AI thông qua **quản lý context**. Diễn giả nhấn mạnh rằng các AI model hiện nay đã rất mạnh, nhưng kết quả vẫn thường kém vì người dùng hoặc không cung cấp đủ bối cảnh, hoặc đưa vào những bối cảnh sai trọng tâm.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+**Một context tốt cần có:**
+- Mục tiêu cần đạt được
+- Tình huống hiện tại
+- Ràng buộc kỹ thuật
+- Bằng chứng hoặc dữ liệu liên quan
 
-#### Event-Driven Architecture
+**Sai lầm phổ biến:**
+- Đưa quá nhiều tài liệu không chọn lọc
+- Sao chép nguyên các file dài
+- Chỉ nêu lại những điều hiển nhiên mà AI đã biết
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+**Nguyên tắc cốt lõi:**
+> Chất lượng context quan trọng hơn số lượng context.
 
-#### Compute Evolution
+**Khái niệm Second AI Brain:**
+Đây là hệ thống tổ chức tri thức cá nhân, giúp bạn nhớ lại dự án và truy xuất đúng thông tin trước khi đặt câu hỏi cho AI.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**Bài học rút ra:** Người dùng AI giỏi là người biết chuyển một yêu cầu mơ hồ thành một tác vụ có mục tiêu, dữ liệu và đầu ra rõ ràng.
 
-#### Amazon Q Developer
+---
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### 2.2 Phạm Nguyễn Hải Anh - Friendly AI Assistant with Amazon Quick Suite
 
-### Những Gì Học Được
+Bài trình bày đề cập đến các khó khăn phổ biến của người dùng doanh nghiệp và quản lý dự án: quản lý quá nhiều tài liệu, cuộc họp, email, dữ liệu và các tác vụ lặp lại. **Amazon Quick Suite** được giới thiệu như một trợ lý AI xây dựng trên Bedrock, tìm kiếm web và dữ liệu nội bộ để tối ưu các quy trình làm việc này.
 
-#### Tư Duy Thiết Kế
+**Amazon Quick Suite hỗ trợ:**
+- Chat và Q&A thông minh
+- Nghiên cứu và tìm kiếm thông minh
+- Dashboard BI
+- Tự động hóa quy trình
+- Nhúng API vào quy trình doanh nghiệp
+- Nền tảng: Amazon Bedrock + Tìm kiếm web + Dữ liệu nội bộ
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+**Tình huống minh họa:**
+Một trợ lý AI cho quản lý dự án có thể tự động tạo biên bản họp, gửi email cho các bên liên quan và lên lịch cho cuộc họp tiếp theo.
 
-#### Kiến Trúc Kỹ Thuật
+**Giá trị chính:**
+- Giảm thời gian dành cho các tác vụ lặp lại và việc thu thập thông tin
+- Giúp người dùng tập trung hơn vào quyết định và phối hợp nhóm
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+**Bài học rút ra:** AI tạo ra giá trị lớn nhất khi được đặt đúng vào quy trình làm việc, hiểu dữ liệu nội bộ và hỗ trợ hành động tiếp theo.
 
-#### Chiến Lược Hiện Đại Hóa
+---
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+#### 2.3 Nguyễn Tuấn Thịnh - Từ Edge đến Origin: CloudFront là nền tảng của bạn
 
-### Ứng Dụng Vào Công Việc
+Bài chia sẻ tập trung vào **Amazon CloudFront** như một lớp nền tảng hoàn chỉnh từ edge đến origin, bao quát chi phí, bảo mật, hiệu năng và độ tin cậy ở quy mô lớn.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+**Mô hình chi phí:**
+- Gói giá cố định bao gồm CDN, WAF, DDoS, DNS và logging
+- Mức giá dễ dự đoán, phù hợp với chủ website nhỏ, người dùng doanh nghiệp và các doanh nghiệp đang mở rộng
+- Xử lý được lưu lượng tăng đột biến mà không gây bùng nổ chi phí bất ngờ
 
-### Trải nghiệm trong event
+**Các tính năng bảo mật:**
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+| Tính năng | Mô tả |
+|---|---|
+| DDoS Protection | Bảo vệ trước các cuộc tấn công lưu lượng lớn |
+| WAF | Web Application Firewall |
+| DNS | Tích hợp với Route 53 |
+| TLS / mTLS | TLS miễn phí cùng mutual TLS cho kết nối được mã hóa |
+| Signed URL | Phân phối nội dung có kiểm tra xác thực |
+| Origin Cloaking | Ẩn máy chủ gốc khỏi truy cập công khai |
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+**Tối ưu hiệu năng:**
+- Bộ nhớ đệm nhiều lớp tại edge để giảm tải origin và tối ưu băng thông
+- Hỗ trợ HTTP/3
+- Nén dữ liệu
+- Kết nối liên tục để giảm tải origin
+- Edge functions cho các logic yêu cầu độ trễ thấp
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+**Các yếu tố đảm bảo độ tin cậy:**
+- Phục vụ nội dung cũ khi origin gặp sự cố
+- Chuyển đổi dự phòng origin
+- Định tuyến thông minh
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+**Bài học rút ra:** CloudFront không chỉ là một CDN. Đây là lớp nền tảng cho tối ưu chi phí, bảo mật, hiệu năng và khả năng chịu lỗi.
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+---
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+#### 2.4 Team VIB - 36 Giờ với LotusHacks: Xây dựng UTMorpho từ Ý tưởng đến Hiện thực
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+Team VIB chia sẻ câu chuyện thực tế khi tham gia **hackathon LotusHacks** trong 36 giờ, từ chỗ chưa có ý tưởng đến lúc hoàn thành demo hoạt động của **UTMorpho**.
+
+**UTMorpho làm gì:**
+Người dùng có thể chụp ảnh, vẽ hoặc tải lên bản phác thảo UI, sau đó AI sẽ tạo giao diện web từ đầu vào đó.
+
+**Kiến trúc sử dụng:**
+```text
+CloudFront -> API Gateway -> Lambda -> Bedrock -> S3 / DynamoDB
+```
+
+**Pipeline AI agent:**
+1. **Vision Analyst** - Phân tích bản phác thảo đầu vào
+2. **UI Designer** - Chuyển thành bản đặc tả thiết kế
+3. **Coder** - Sinh ra mã nguồn thực tế
+
+**Những thách thức chính:**
+- Giới hạn token từ context window của LLM
+- AI sinh quá nhiều nội dung dẫn đến đầu ra bị nhiễu
+- Áp lực thời gian thuyết trình
+- Phạm vi dự án bị phình ra do có quá nhiều ý tưởng
+
+**Bài học rút ra:** Những khó chịu thực tế mới tạo ra ý tưởng thực tế. Hackathon đòi hỏi phối hợp nhóm tốt, kiểm soát phạm vi chặt và tập trung vào một trải nghiệm cốt lõi thực sự hữu ích.
+
+---
+
+#### 2.5 Đào Đức - Tính không tất định của các thiết lập LLM tất định
+
+Bài trình bày này trả lời một câu hỏi kỹ thuật quan trọng: **Vì sao LLM vẫn có thể cho ra kết quả khác nhau ngay cả khi đặt `temperature=0`?** Đây là vấn đề rất đáng lưu ý với các hệ thống có mức độ rủi ro cao như pháp lý, tài chính hoặc truy xuất thông tin y tế.
+
+**Cách LLM sinh token:**
+- Logit computation -> Softmax -> Sampling
+- `temperature` chỉ điều chỉnh phân phối xác suất, chứ không loại bỏ hoàn toàn nguồn gốc của non-determinism
+
+**Các thử nghiệm đã thực hiện:**
+- **5 model được kiểm thử:** GPT-3.5, GPT-4o, Llama-3 70B, Llama-3 8B, Mixtral 8x7B
+- **8 tác vụ x 10 lần chạy** cho mỗi model; kết quả cho thấy độ chính xác dao động đáng kể giữa các lần chạy giống hệt nhau
+
+**Nguyên nhân kỹ thuật:**
+
+| Nguyên nhân | Giải thích |
+|---|---|
+| Phép tính dấu phẩy động | Các phép tính trên GPU không hoàn toàn tất định |
+| Thứ tự thực thi song song | Thứ tự lập lịch của luồng GPU có thể thay đổi |
+| Gom lô suy luận | Việc gom lô phía nhà cung cấp làm thay đổi thứ tự xử lý |
+
+**Chiến lược giảm thiểu:**
+- Chạy nhiều lần và dùng phương pháp **bỏ phiếu đa số**
+- Dùng **đầu ra có cấu trúc** như JSON, regex hoặc ràng buộc theo ngữ pháp
+- Áp dụng **kiểm thử hồi quy** để kiểm tra độ ổn định của đầu ra
+- **Tự triển khai** model khi cần kiểm soát hoàn toàn quá trình suy luận
+- Thiết kế hệ thống **chịu được dao động** ngay từ đầu
+
+**Điểm cân bằng:** `temperature ~= 0.1` cho sự cân bằng tốt hơn giữa độ ổn định và chất lượng output so với việc cố định tuyệt đối ở `temperature=0`.
+
+**Bài học rút ra:** `temperature=0` không phải là đảm bảo cho độ tin cậy. Hệ thống cần được thiết kế để xử lý sự dao động ngay từ đầu.
+
+---
+
+#### 2.6 Vy Lam - Hệ thống multi-agent cấp doanh nghiệp: Chấm điểm tín dụng cho startup
+
+Bài chia sẻ trình bày một **hệ thống chấm điểm tín dụng multi-agent** cho startup, một lĩnh vực mà mô hình đánh giá tín dụng truyền thống thường thất bại vì dữ liệu của startup khác biệt căn bản so với doanh nghiệp đã vận hành lâu năm.
+
+**Vì sao chấm điểm tín dụng truyền thống không phù hợp với startup:**
+- Cần lịch sử tài chính dài, tài sản thế chấp và mô hình doanh thu ổn định
+- Startup thường chỉ có traction, chất lượng đội ngũ, IP và dữ liệu phi cấu trúc
+
+**Các chiều dữ liệu của startup:**
+
+| Chiều | Ví dụ |
+|---|---|
+| Tài chính | Doanh thu, tốc độ đốt vốn, thời gian sống |
+| Thị trường | Quy mô thị trường, bối cảnh cạnh tranh |
+| Đội ngũ | Kinh nghiệm, nền tảng, sự đa dạng |
+| Sức kéo | Tăng trưởng người dùng, tỷ lệ giữ chân, quan hệ đối tác |
+
+**Thiết kế hệ thống - Hội đồng tín dụng ảo:**
+
+| Agent | Trách nhiệm |
+|---|---|
+| Quản lý | Điều phối toàn bộ quá trình đánh giá |
+| Phân tích tài chính | Đánh giá các chỉ số tài chính |
+| Phân tích thị trường | Đánh giá cơ hội thị trường |
+| Đánh giá đội ngũ | Rà soát đội ngũ sáng lập |
+| Đánh giá rủi ro | Xác định các yếu tố rủi ro |
+| Kiểm tra tuân thủ | Đảm bảo tuân thủ quy định |
+
+**Yêu cầu đầu ra:**
+- Điểm tín dụng
+- Mức xếp hạng rủi ro
+- Mức độ tin cậy
+- Nhật ký kiểm toán với khả năng giải thích quyết định
+
+**Các cân nhắc ở cấp doanh nghiệp - 6 trụ cột:**
+
+| Trụ cột | Phạm vi |
+|---|---|
+| Bảo mật | Xác thực, phân quyền, mã hóa |
+| Quản trị dữ liệu | Truy vết dữ liệu, kiểm soát truy cập, lưu trữ |
+| Mạng | Cô lập VPC, private endpoints |
+| Vận hành | Giám sát, cảnh báo, xử lý sự cố |
+| Yếu tố con người | Khả năng giải thích, quy trình phê duyệt |
+| Tuân thủ | Phù hợp quy định, sẵn sàng kiểm toán |
+
+**Rào chắn an toàn - Ba tầng (Đầu vào -> Xử lý -> Đầu ra):**
+
+| Tầng | Kiểm soát |
+|---|---|
+| Đầu vào | Lọc nội dung, phát hiện thông tin cá nhân, chống tấn công injection |
+| Xử lý | Kiểm soát lựa chọn model, ràng buộc suy luận |
+| Đầu ra | Xác thực phản hồi, kiểm tra tuân thủ |
+
+**Lộ trình triển khai:**
+```text
+Local App / CrewAI -> AgentCore -> Docker -> ECR -> Bedrock -> API Gateway
+                    + VPC, IAM, Secrets, Monitoring, Autoscaling, DR Strategy
+```
+
+**ROI kỳ vọng:**
+- Thời gian xử lý: từ vài tuần xuống vài giờ
+- Giảm số giờ làm việc của chuyên viên phân tích
+- Tăng độ chính xác phê duyệt nhờ đánh giá đa chiều
+
+---
+
+![Hình ảnh tại Event 2](/images/b2.jpg)
+
+---
+
+### 4. Kết luận
+
+AWS Vietnam Community Day 2026 cho thấy giá trị của AI không nằm ở riêng model, mà còn nằm ở cách cung cấp bối cảnh, thiết kế kiến trúc, triển khai bảo mật và rào chắn an toàn, cũng như vận hành hệ thống ở quy mô thực tế.
+
+| Đối tượng | Bài học chính |
+|---|---|
+| Cá nhân | Học cách cung cấp bối cảnh chất lượng và xây dựng kho tri thức cá nhân để làm việc hiệu quả hơn với AI |
+| Đội nhóm sản phẩm | Ưu tiên bài toán thực, giới hạn phạm vi và đưa AI vào quy trình cụ thể |
+| Hạ tầng | Tận dụng CloudFront và các dịch vụ AWS cho hiệu năng, bảo mật và độ tin cậy |
+| Doanh nghiệp | Hệ thống multi-agent cần rào chắn an toàn, nhật ký kiểm toán, tuân thủ quy định và ROI rõ ràng trước khi đưa vào vận hành thực tế |
+
+> **Thông điệp chung:** AI chỉ thực sự tạo ra giá trị khi được kết hợp với tư duy sản phẩm, kiến trúc hệ thống phù hợp và quy trình vận hành đáng tin cậy.

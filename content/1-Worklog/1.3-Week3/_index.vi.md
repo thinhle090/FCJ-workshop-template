@@ -5,55 +5,43 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 3:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu các khái niệm về lưu trữ đối tượng và triển khai lưu trữ trang web tĩnh.
+* Nắm vững cách vận hành các dịch vụ cơ sở dữ liệu quản trị mã nguồn SQL và NoSQL trên AWS.
+* Tìm hiểu cơ chế bộ nhớ đệm (caching) để tối ưu hóa hiệu năng và thời gian phản hồi của ứng dụng.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Dịch vụ lưu trữ đối tượng (Amazon S3): <br>&emsp; + Tạo Bucket, quản lý vòng đời tệp tin (Lifecycle) và phân quyền truy cập. <br>&emsp; + Triển khai lưu trữ trang web tĩnh (Static Website Hosting). <br>&emsp; + Cấu hình các chính sách bảo mật cho Bucket (Bucket Policy).                                                                                       | 04/05/2026   | 04/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Cơ sở dữ liệu có cấu trúc (Amazon RDS): <br>&emsp; + Khởi tạo và quản lý MySQL/PostgreSQL trên đám mây. <br>&emsp; + Tìm hiểu cơ chế tự động sao lưu (Backup) và tính năng sẵn sàng cao.               | 05/05/2026   | 05/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Cơ sở dữ liệu NoSQL (Amazon DynamoDB): <br>&emsp; + Hiểu về cấu trúc bảng (Table), Item và thuộc tính Primary Key. <br>&emsp; + Cách thức truy xuất dữ liệu với hiệu năng cực cao và khả năng mở rộng.               | 06/05/2026   | 06/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 5   | - Cơ sở dữ liệu NoSQL (Amazon DynamoDB): <br>&emsp; + Hiểu về cấu trúc bảng (Table), Item và thuộc tính Primary Key. <br>&emsp; + Cách thức truy xuất dữ liệu với hiệu năng cực cao và khả năng mở rộng.               | 07/05/2026   | 07/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 6   | - Tối ưu hiệu năng với Amazon ElastiCache: <br>&emsp; + Triển khai bộ nhớ đệm (Redis) để giảm tải cho cơ sở dữ liệu chính. <br>&emsp; + Phân tích các tình huống thực tế cần sử dụng Caching.               | 08/05/2026   | 08/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
 
 
 ### Kết quả đạt được tuần 3:
+* Dịch vụ lưu trữ đối tượng với Amazon S3:
+  * Tạo và quản lý các S3 Bucket, thiết lập các quy tắc vòng đời tệp tin (Lifecycle) để tối ưu hóa chi phí lưu trữ.
+  * Cấu hình tính năng Static Website Hosting và tích hợp thành công với các thiết lập tên miền riêng.
+  * Kiểm soát bảo mật dữ liệu bằng cách định nghĩa chính xác các chính sách Bucket (Bucket Policy) và Danh sách kiểm soát truy cập (ACL).
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Dịch vụ cơ sở dữ liệu có cấu trúc với Amazon RDS:
+  *	Triển khai các công cụ cơ sở dữ liệu quản trị phổ biến (MySQL, PostgreSQL) và cấu hình Multi-AZ để tăng tính sẵn sàng cao.
+  *	Thiết lập cửa sổ sao lưu tự động (Backup), lịch trình bảo trì và tạo các bản sao chỉ đọc (Read Replicas) để giảm tải lưu lượng truy vấn.
+  * Cô lập các thực thể cơ sở dữ liệu bên trong Subnet riêng tư (Private Subnet) và hạn chế truy cập mạng bằng các Security Group mục tiêu.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Dịch vụ cơ sở dữ liệu NoSQL với Amazon DynamoDB:
+  * Thiết kế các bảng cơ sở dữ liệu tối ưu bằng cách sử dụng Partition Key và Sort Key để hợp lý hóa việc truy vấn dữ liệu.
+  *	Đánh giá giữa hai chế độ dung lượng Provisioned (Định sẵn) và On-demand (Theo nhu cầu) để cân bằng giữa hiệu suất và chi phí.
+  *	Sử dụng DynamoDB Streams để theo dõi, ghi lại và phản hồi các thay đổi dữ liệu theo thời gian thực. 
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Bộ nhớ đệm trong với Amazon ElastiCache:
+  * Triển khai các cụm (cluster) Redis và Memcached để tăng tốc độ truy xuất cho các truy vấn ứng dụng nặng.
+  *	Phân tích các chiến lược bộ nhớ đệm cốt lõi như Lazy Loading và Write-through để duy trì tính nhất quán nghiêm ngặt của dữ liệu.
 
 

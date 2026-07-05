@@ -5,53 +5,35 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Direct internet traffic efficiently using advanced cloud domain routing policies.
+* Gain comprehensive hands-on experience connecting secure hybrid network infrastructures.
+* Execute programmable logic at global edge locations to enhance user experience.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Domain Name System (Amazon Route 53): <br>&emsp; + Register new domain names and manage DNS records (A, CNAME, MX). <br>&emsp; + Set up intelligent routing: Failover and Latency.                                                                                      | 18/05/2026   | 18/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Networking Workshop (AWS Workshop): <br>&emsp; + Comprehensive practice on advanced VPC architecture. <br>&emsp; + Securely connecting the internal network to the cloud (Hybrid Cloud).             | 19/05/2026   | 19/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Networking Workshop (AWS Workshop): <br>&emsp; + Comprehensive practice on advanced VPC architecture. <br>&emsp; + Securely connecting the internal network to the cloud (Hybrid Cloud).               | 20/05/2026   | 20/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 5   | - Edge logic processing (Lambda@Edge): <br>&emsp; + Deploy processing code directly at CloudFront's edge stations. <br>&emsp; + Optimize customized content based on the user's geographic location.              | 21/05/2026   | 21/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
+| 6   | - Edge logic processing (Lambda@Edge): <br>&emsp; + Deploy processing code directly at CloudFront's edge stations. <br>&emsp; + Optimize customized content based on the user's geographic location.             | 22/05/2026   | 22/05/2026      | <https://cloudjourney.awsstudygroup.com/> |> |
 
 
 ### Week 5 Achievements:
+* Managing the Domain Name System with Amazon Route 53:
+  * Registering internet domain names and managing standard record types including A, CNAME, Alias, MX, and TXT.
+  * Applying advanced routing policies such as: Weighted, Latency-based, Failover, and Geolocation.
+  * Setting up automatic health checks to immediately redirect user traffic away from failing server endpoints.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Practicing Hybrid Networking via AWS Workshop:
+  * Performing in-depth labs to establish secure connections between on-premises systems and AWS VPCs using Site-to-Site VPN.
+  * Configuring VPC Peering connections to enable direct, secure routing between isolated AWS virtual networks.
 
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Edge server computing with Lambda@Edge:
+  * Write and implement Lambda functions (Node.js/Python) to intercept and modify HTTP requests/responses directly at CloudFront Edge Locations.
+  * Optimize web content delivery dynamically by authenticating users and personalizing media closer to the user's geographic location.
