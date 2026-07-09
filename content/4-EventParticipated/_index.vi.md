@@ -1,46 +1,21 @@
 ---
-title: "Các events đã tham gia"
-date: 2024-01-01
+title: "Sự kiện đã tham gia"
+date: 2026-06-27
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Dưới đây là các sự kiện cộng đồng AWS mà em đã tham gia trong thời gian thực tập.
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+---
 
+### [Sự kiện 1 - Prompt Engineering, Sơ đồ tư duy AI & Phương pháp BMAD](4.1-event1)
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Sự kiện có ba phần chính: cách viết prompt hiệu quả hơn để LLM đưa ra câu trả lời hữu ích hơn, sơ đồ tư duy về tương tác AI hiệu quả kết hợp kiến trúc AWS, và phương pháp BMAD – một framework mã nguồn mở sử dụng AI để hướng dẫn phát triển phần mềm có cấu trúc. Phần prompt engineering là phần em thấy thực tế nhất vì có thể áp dụng ngay.
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+### [Sự kiện 2 - AWS Vietnam Community Day 2026](4.2-event2)
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+Đây là sự kiện lớn hơn với nhiều diễn giả chia sẻ kinh nghiệm thực tế về AI và cloud. Các bài trình bày nổi bật nhất với em là Build Second Brain (cách cung cấp đúng ngữ cảnh cho AI), CloudFront từ edge đến origin, và hệ thống chấm điểm tín dụng multi-agent cho startup. Ngoài ra còn có các phiên về kinh nghiệm hackathon LotusHacks và tính không xác định của LLM, đều rất thú vị.
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
-
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
 

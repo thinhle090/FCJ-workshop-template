@@ -6,42 +6,36 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
+## General Evaluation
 
-### Overall Evaluation
+After completing the **12-week internship at Amazon Web Services (AWS) Vietnam** from **April 20, 2026** to **July 5, 2026**, I believe that I have made significant progress in both technical knowledge and professional skills. This internship provided me with the opportunity to bridge the gap between academic learning and real-world practice by applying the knowledge gained at university to practical cloud computing projects and hands-on laboratories.
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+During the first phase of the internship, I completed a structured learning program covering a wide range of AWS core services, including **Amazon EC2, Amazon VPC, Amazon S3, Amazon RDS, AWS IAM, Amazon Route 53, Amazon CloudFront, Amazon CloudWatch**, and several other cloud technologies. Through theoretical study combined with practical laboratories, I developed a comprehensive understanding of how these services work individually and how they can be integrated to build scalable, secure, and reliable cloud-based systems.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+One of the most valuable experiences during the internship was participating in the implementation of an **AWS-based E-commerce Website** project. Throughout the project, I was involved in requirement analysis, system architecture design, infrastructure deployment, Amazon EC2 configuration, Amazon RDS database implementation, Amazon S3 storage management, Route 53 domain configuration, CloudFront content delivery, and the implementation of security mechanisms such as IAM, Security Groups, and HTTPS. This experience allowed me to gain a deeper understanding of the complete lifecycle of deploying and managing applications in a cloud environment.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+Besides technical knowledge, the internship also helped me develop essential soft skills. I learned how to plan and manage my tasks effectively, collaborate with teammates, communicate technical ideas clearly, prepare technical documentation, and independently research AWS documentation and best practices. These experiences significantly improved my confidence and prepared me for working in a professional environment.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+Another important outcome of this internship was the improvement of my cloud architecture mindset. Instead of viewing AWS services as isolated components, I learned how to design complete cloud solutions by considering scalability, security, availability, performance efficiency, and cost optimization based on the principles of the AWS Well-Architected Framework.
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+Overall, I believe that I successfully achieved the objectives of the internship program. The knowledge, practical experience, and professional working attitude that I gained during these **12 weeks** have provided a strong foundation for my future career in **Cloud Computing**, **Cloud Security**, and **Cybersecurity**. This internship has also motivated me to continue learning advanced cloud technologies and pursue internationally recognized AWS certifications.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
 
----
+## Suggestions & Expectations
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+Throughout the internship, I received valuable guidance and continuous support from my supervisors and mentors. Their experience, feedback, and encouragement enabled me to improve my technical skills while adapting to a professional working environment. I sincerely appreciate **Amazon Web Services (AWS) Vietnam** for providing such a meaningful internship program and an excellent learning environment.
 
----
+Based on my experience, I would like to propose several suggestions for future internship programs.
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+First, it would be beneficial to include more advanced technical workshops focusing on topics such as **AWS Security**, **DevOps**, **Container Technologies (Docker, Amazon ECS, Amazon EKS)**, **Infrastructure as Code (AWS CloudFormation or Terraform)**, and **Serverless Computing**. These technologies are increasingly adopted in modern enterprises and would provide interns with more practical industry knowledge.
+
+In addition, organizing more technical sharing sessions with **AWS Solution Architects, Cloud Engineers, and Security Engineers** would allow interns to gain valuable insights into real-world cloud projects, best practices, and career development opportunities within the cloud computing industry.
+
+Another recommendation is to provide interns with greater opportunities to participate in larger real-world projects or enterprise-scale case studies. Such experiences would strengthen teamwork, communication, analytical thinking, and problem-solving skills while giving interns a better understanding of software development and cloud deployment processes in professional organizations.
+
+Furthermore, I hope that future internship programs will continue supporting students by providing guidance toward internationally recognized AWS certifications such as **AWS Certified Cloud Practitioner**, **AWS Certified Solutions Architect – Associate**, and other cloud security certifications. These certifications would greatly benefit students in building their professional careers after graduation.
+
+From a personal perspective, I recognize that there are still many areas in which I need to improve. I plan to continue studying advanced cloud architecture, cloud security, infrastructure automation, cost optimization, and high-availability system design. I also intend to pursue AWS certification paths and continuously update my knowledge of emerging cloud technologies to better prepare for future professional challenges.
+
+In conclusion, the **12-week internship at Amazon Web Services (AWS) Vietnam** has been one of the most valuable learning experiences in my academic journey. The knowledge, practical experience, professional working attitude, and technical skills that I acquired during the internship will serve as a solid foundation for my future career. I hope to continue developing my expertise in cloud computing and cybersecurity while contributing to innovative cloud solutions and the technology community in the years ahead.
