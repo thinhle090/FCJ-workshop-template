@@ -14,7 +14,6 @@ pre: " <b> 4.2. </b> "
 
 This page summarizes the sessions from **AWS Vietnam Community Day 2026**, covering AI context design, edge infrastructure, hackathon experience, LLM reliability, and enterprise-grade multi-agent systems.
 
----
 
 ### Overall Theme
 
@@ -23,13 +22,11 @@ This page summarizes the sessions from **AWS Vietnam Community Day 2026**, cover
 - AWS serves as the foundation for infrastructure, security, operations, and AI system scaling
 - All sessions emphasized practicality: from prompt crafting and hackathons to CloudFront optimization and enterprise multi-agent systems
 
----
 
 ### 1. Introduction
 
 AWS Vietnam Community Day 2026 brought together practitioners sharing real-world experience building AI and cloud systems on AWS. Sessions covered a wide range of topics from individual productivity with AI, business assistant tools, CDN infrastructure, hackathon project building, LLM reliability concerns, and enterprise-grade credit scoring with multi-agent architecture.
 
----
 
 ### 2. Session Summaries
 
@@ -56,8 +53,6 @@ A personal knowledge organization system that helps you recall projects and retr
 
 **Key takeaway:** A skilled AI user is someone who can convert vague requests into a task with a clear objective, data, and expected output.
 
----
-
 #### 2.2 Phạm Nguyễn Hải Anh - Friendly AI Assistant with Amazon Quick Suite
 
 This session addressed the pain points of business users and PMs: managing many documents, meetings, emails, data, and repetitive tasks. **Amazon Quick Suite** was introduced as an AI-powered assistant built on Bedrock, web search, and internal data to streamline these workflows.
@@ -79,7 +74,6 @@ An AI PM assistant that automatically creates Meeting Minutes (MoM), sends email
 
 **Key takeaway:** AI delivers the most value when embedded in the right workflow, understands internal data, and supports next actions.
 
----
 
 #### 2.3 Nguyễn Tuấn Thịnh - From Edge To Origin: CloudFront as Your Foundation
 
@@ -115,7 +109,6 @@ This session explored **Amazon CloudFront** as a complete foundation from edge t
 
 **Key takeaway:** CloudFront is not just a CDN. It is a foundation layer for cost optimization, security, performance, and fault tolerance.
 
----
 
 #### 2.4 Team VIB - 36 Hours with LotusHacks: Building UTMorpho from Idea to Reality
 
@@ -142,7 +135,6 @@ CloudFront -> API Gateway -> Lambda -> Bedrock -> S3 / DynamoDB
 
 **Key takeaway:** Real frustration generates real ideas. Hackathons require strong teamwork, tight scope control, and focus on one genuinely useful core experience.
 
----
 
 #### 2.5 Đào Đức - Non-Determinism of "Deterministic" LLM Settings
 
@@ -175,7 +167,6 @@ This session tackled a critical technical question: **Why do LLMs still produce 
 
 **Key takeaway:** `temperature=0` is not a reliability guarantee. Systems must be designed to handle variance from the start.
 
----
 
 #### 2.6 Vy Lam - Enterprise-Grade Multi-Agent System: Startup Credit Scoring
 
@@ -241,11 +232,9 @@ Local App / CrewAI -> AgentCore -> Docker -> ECR -> Bedrock -> API Gateway
 - Reduced analyst hours
 - Higher approval accuracy through multi-dimensional evaluation
 
----
 
 ![Photo from Event 2](/images/b2.jpg)
 
----
 
 ### 4. Conclusion
 

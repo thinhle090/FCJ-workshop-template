@@ -14,7 +14,6 @@ pre: " <b> 4.1. </b> "
 
 This page summarizes the key knowledge shared during the event, covering three main topics: **Automated Prompt Engineering**, an AI interaction mind map, and the **BMAD (Build More Architect Dreams)** development methodology.
 
----
 
 ### 1. Introduction
 
@@ -23,8 +22,6 @@ The content in this document is compiled from several materials presented during
 - Presentation: **"Automated Prompt Engineering: Enhancing LLM Output Quality"**
 - Mind Map: **"Effective AI Interaction & AWS Application Architecture"**
 - AI Development Methodology: **BMAD (Build More Architect Dreams)**
-
----
 
 ### 2. Detailed Content
 
@@ -80,8 +77,6 @@ Proptimizer is a browser extension that automatically optimizes prompts using an
 
 CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
 
----
-
 #### 2.2 Mind Map: Effective AI Interaction & AWS Application Architecture
 
 **Improving AI Interaction**
@@ -106,8 +101,6 @@ The mind map introduced the **KFC (Knowledge – Format – Constraints)** frame
 **AWS Serverless Architecture:**
 
 CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
-
----
 
 #### 2.3 BMAD Methodology (Build More Architect Dreams)
 
@@ -141,7 +134,6 @@ npx bmad-method install
 
 Discord, YouTube, and X (Twitter).
 
----
 
 ### 3. Event Photos
 
@@ -149,7 +141,6 @@ The following image was captured during the event:
 
 ![Event 1 Photo](/images/b1.jpg)
 
----
 
 ### 4. Conclusion
 

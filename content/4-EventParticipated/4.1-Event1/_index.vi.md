@@ -14,7 +14,6 @@ pre: " <b> 4.1. </b> "
 
 Trang này tổng hợp những nội dung nổi bật được chia sẻ trong sự kiện, tập trung vào ba chủ đề chính gồm: **Automated Prompt Engineering**, sơ đồ tư duy về cách tương tác hiệu quả với AI và phương pháp phát triển **BMAD (Build More Architect Dreams)**.
 
----
 
 ### 1. Giới thiệu
 
@@ -24,7 +23,6 @@ Nội dung được tổng hợp từ nhiều tài liệu và phần trình bày
 - Sơ đồ tư duy **"Tương tác hiệu quả với AI & Kiến trúc ứng dụng AWS"**
 - Phương pháp phát triển AI **BMAD (Build More Architect Dreams)**
 
----
 
 ### 2. Nội dung chi tiết
 
@@ -80,7 +78,6 @@ Bài trình bày giới thiệu vai trò của Prompt Engineering trong việc n
 
 CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
 
----
 
 #### 2.2 Sơ đồ tư duy: Tương tác AI hiệu quả & Kiến trúc ứng dụng AWS
 
@@ -107,7 +104,6 @@ Sơ đồ tư duy giới thiệu mô hình **KFC (Knowledge - Format - Constrain
 
 CloudFront → S3 → Cognito → API Gateway → Lambda → Bedrock → DynamoDB → CloudWatch
 
----
 
 #### 2.3 Phương pháp BMAD (Build More Architect Dreams)
 
@@ -141,15 +137,12 @@ npx bmad-method install
 
 Discord, YouTube và X (Twitter).
 
----
 
 ### 3. Hình ảnh khi tham gia sự kiện
 
 Dưới đây là một số hình ảnh ghi lại quá trình tham gia sự kiện:
 
 ![Hình ảnh tại Event 1](/images/b1.jpg)
-
----
 
 ### 4. Kết luận
 
